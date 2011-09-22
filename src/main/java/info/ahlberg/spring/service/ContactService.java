@@ -1,4 +1,6 @@
-package info.ahlberg.spring;
+package info.ahlberg.spring.service;
+
+import info.ahlberg.spring.domain.Contact;
 
 public interface ContactService {
 

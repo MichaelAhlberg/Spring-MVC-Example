@@ -1,4 +1,4 @@
-package info.ahlberg.spring;
+package info.ahlberg.spring.dao;
 
 import java.io.Serializable;
 import java.util.List;

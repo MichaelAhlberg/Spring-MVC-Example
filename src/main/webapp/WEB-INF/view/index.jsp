@@ -5,7 +5,7 @@
     xmlns:form="http://www.springframework.org/tags/form"
     xmlns:spring="http://www.springframework.org/tags">
 
-<jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+<jsp:directive.page contentType="text/html" pageEncoding="utf-8" />
 <jsp:output omit-xml-declaration="true" />
 <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" />
 

@@ -1,4 +1,4 @@
-package info.ahlberg.spring;
+package info.ahlberg.spring.domain;
 
 import java.io.Serializable;
 

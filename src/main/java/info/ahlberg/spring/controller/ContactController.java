@@ -1,4 +1,7 @@
-package info.ahlberg.spring;
+package info.ahlberg.spring.controller;
+
+import info.ahlberg.spring.domain.Contact;
+import info.ahlberg.spring.service.ContactService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,7 @@
-package info.ahlberg.spring;
+package info.ahlberg.spring.service;
+
+import info.ahlberg.spring.dao.ContactDAO;
+import info.ahlberg.spring.domain.Contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
