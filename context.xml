@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+        <Environment name="databaseDialect" type="java.lang.String" value="org.hibernate.dialect.HSQLDialect" />
+        <Environment name="databaseUrl" type="java.lang.String" value="jdbc:hsqldb:mem:spring-mvc" />
+        <Environment name="databaseDriver" type="java.lang.String" value="org.hsqldb.jdbcDriver" />
+        <Environment name="databaseUsername" type="java.lang.String" value="sa" />
+        <Environment name="databasePassword" type="java.lang.String" value="" />
+        <Environment name="databaseShowSql" type="java.lang.String" value="false" />
+        <Environment name="databaseGenerateDdl" type="java.lang.String" value="true" />
+        <Environment name="databaseDatabase" type="java.lang.String" value="HSQL" />
+</Context>

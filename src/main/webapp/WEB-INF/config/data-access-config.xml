@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/jee
+            http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+            http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<tx:annotation-driven />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="spring-mvc-example" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="databasePlatform">
+					<jee:jndi-lookup jndi-name="java:comp/env/databaseDialect" />
+				</property>
+				<property name="database">
+					<jee:jndi-lookup jndi-name="java:comp/env/databaseDatabase" />
+				</property>
+				<property name="showSql">
+					<jee:jndi-lookup jndi-name="java:comp/env/databaseShowSql" />
+				</property>
+				<property name="generateDdl">
+					<jee:jndi-lookup jndi-name="java:comp/env/databaseGenerateDdl" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<jee:jndi-lookup jndi-name="java:comp/env/databaseDriver" />
+		</property>
+		<property name="url">
+			<jee:jndi-lookup jndi-name="java:comp/env/databaseUrl" />
+		</property>
+		<property name="username">
+			<jee:jndi-lookup jndi-name="java:comp/env/databaseUsername" />
+		</property>
+		<property name="password">
+			<jee:jndi-lookup jndi-name="java:comp/env/databasePassword" />
+		</property>
+	</bean>
+
+</beans>
