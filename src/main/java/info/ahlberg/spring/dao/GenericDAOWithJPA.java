@@ -33,7 +33,7 @@ public abstract class GenericDAOWithJPA<T, ID extends Serializable> implements G
     }
 
     public T loadById(ID id) {
-        if(id == null) {
+        if (id == null) {
             return null;
         } else {
             return entityManager.find(persistentClass, id);
