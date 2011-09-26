@@ -23,17 +23,11 @@
 </div>
 
 <div>
-<ul>
-    <c:forEach items="${ contacts }" var="contact">
-        <c:url value="/contact/${ contact.id }" var="url"/>
-        <li>
-            <a href="${ url }"><c:out value="${ contact.firstName }"/>&#160;<c:out value="${ contact.lastName }"/></a>
-        </li>
-    </c:forEach>
-</ul>
-
-<c:url value="/add" var="url"/>
-<a href="${ url }">Add contact</a>
+    <form:form commandName="contact" method="POST">
+        First name: <form:input path="firstName" /><br/>
+        Last name: <form:input path="lastName" /><br/>
+        <input type="submit" value="Save Changes" />
+    </form:form>
 </div>
 
 </body>

@@ -25,4 +25,15 @@ public class ContactServiceImpl implements ContactService {
         contactDAO.persist(contact);
     }
 
+    @Override
+    @Transactional
+    public void update(Contact contact) {
+        contactDAO.update(contact);
+    }
+    
+    @Override
+    public Contact findById(Long id) {
+        return contactDAO.loadById(id);
+    }
+
 }
